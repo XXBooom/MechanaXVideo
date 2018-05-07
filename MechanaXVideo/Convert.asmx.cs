@@ -60,16 +60,39 @@ namespace clickclickboom.machinaX.MechanaX.Video.Service {
 			return (Result);
 		}
 
-		/// <summary>Convert video: .mov to .mp4</summary>
+		/// <summary>Convert video: to a path (retaining original name)</summary>
 		/// <param name="SourcePath">Filepath to the source.mov</param>
 		/// <param name="DestFolder">Destination folder</param>
 		/// <param name="Format">Destination format, ie mp4, mov, avi etc</param>
 		[WebMethod(Description = "Convert video")]
-		public XmlDocument Video(string SourcePath, string DestFolder, string Format) {
-			xLogger.Debug("Video", "SourcePath", SourcePath);
+		public XmlDocument Video2Folder(string SourcePath, string DestFolder, string Format) {
+			xLogger.Debug("Video", "::SourcePath:", SourcePath);
 
 			try {
-				_Convert(SourcePath, DestFolder, Format);
+				_Convert2Folder(SourcePath, DestFolder, Format);
+				AddOk();
+				AddNode("output", OutputPath);
+				AddTime();
+
+				xLogger.Debug("Video:ok");
+			} catch (x_exception e) {
+				_AddError(e);
+			} catch (System.Exception e) {
+				_AddError(e);
+			}
+			return (Result);
+		}
+
+		/// <summary>Convert video: to a particular file path</summary>
+		/// <param name="SourcePath">Filepath to the source video file</param>
+		/// <param name="DestPath">Filepath to the destination video file</param>
+		/// <param name="Format">Destination format, ie mp4, mov, avi etc</param>
+		[WebMethod(Description = "Convert video")]
+		public XmlDocument Video(string SourcePath, string DestPath, string Format) {
+			xLogger.Debug("Video", "::SourcePath:", SourcePath, "::DestPath:", DestPath);
+
+			try {
+				_Convert(SourcePath, DestPath, Format);
 				AddOk();
 				AddNode("output", OutputPath);
 				AddTime();

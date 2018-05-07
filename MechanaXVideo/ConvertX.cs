@@ -82,16 +82,20 @@ namespace clickclickboom.machinaX.MechanaX.Video.Service {
 
 		protected void _Mov2Mp4(string sourcePath, string destFolder) {
 			OutputFolder = destFolder;
-			//FileInfo source = new FileInfo(sourcePath);
-			//OutputPath = string.Concat(destFolder, "\\", Path.GetFileNameWithoutExtension(source.Name), ".mp4");
-
-			//_FFMpeg.ConvertMedia(sourcePath, OutputPath, Format.mp4);
 			convert(sourcePath, Format.mp4);
 		}
 
-		protected void _Convert(string sourcePath, string destFolder, string format) {
+		protected void _Convert2Folder(string sourcePath, string destFolder, string format) {
 			OutputFolder = destFolder;
 			convert(sourcePath, format);
+		}
+
+		protected void _Convert(string sourcePath, string outputPath) {
+			_Convert(sourcePath, outputPath, Format.mp4);
+		}
+		protected void _Convert(string sourcePath, string outputPath, string format) {
+			OutputPath = outputPath;
+			_FFMpeg.ConvertMedia(sourcePath, outputPath, format);
 		}
 
 		private void convert(string sourcePath, string format) {
@@ -100,7 +104,6 @@ namespace clickclickboom.machinaX.MechanaX.Video.Service {
 
 			_FFMpeg.ConvertMedia(sourcePath, OutputPath, format);
 		}
-
 	}
 }
 
