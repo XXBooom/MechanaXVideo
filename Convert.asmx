@@ -1,1 +1,1 @@
-<%@ WebService Language="c#" Class="clickclickboom.machinaX.MechanaX.Video.Service.Convert" %>
+<%@ WebService Language="c#" Class="MechanaX.Video.Service.Convert" %>

@@ -1,25 +1,8 @@
-﻿
-/*	-----------------------------------------------------------------------	
-	Copyright:	clickclickBOOM cc
-	Author:		Alan Benington
-	Started:	2018-05-04
-	Status:		release	
-	Version:	4.0.3
-	Build:		20180504
-	License:	GNU General Public License
-	-----------------------------------------------------------------------	*/
+﻿using System;
+using System.Web.Services;
+using System.Xml;
 
-/*	-----------------------------------------------------------------------	
-	Development Notes:
-	==================
-	Re-started from WebMaxima
-	---------------------------------------------------------------------------	*/
-
-namespace clickclickboom.machinaX.MechanaX.Video.Service {
-
-	using System;
-	using System.Web.Services;
-	using System.Xml;
+namespace MechanaX.Video.Service {
 	
 	/// <summary>
 	/// Web service implementation for Xxxx

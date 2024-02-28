@@ -1,27 +1,12 @@
-﻿
-/*	-----------------------------------------------------------------------	
-	Copyright:	clickclickBOOM cc
-	Author:		Alan Benington
-	Started:	2018-05-04
-	Status:		release	
-	Version:	4.0.3
-	Build:		20180504
-	License:	GNU General Public License
-	-----------------------------------------------------------------------	*/
+﻿using NReco.VideoConverter;
+using System;
+using System.IO;
+using System.Xml;
+using XXBoom.MachinaX;
 
-/*	-----------------------------------------------------------------------	
-	Development Notes:
-	==================
-	Re-started from WebMaxima
-	---------------------------------------------------------------------------	*/
+namespace MechanaX.Video.Service {
 
-namespace clickclickboom.machinaX.MechanaX.Video.Service {
 
-	using NReco.VideoConverter;
-	using System;
-	using System.IO;
-	using System.Xml;
-	
 	/// <summary>
 	/// ConvertX extends ServiceX to implement the xxxx management functionality
 	/// </summary>
