@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LoeriesAdminWS")]
-[assembly: AssemblyDescription("Loeries Admin system web services")]
+[assembly: AssemblyTitle("MechanaXVideo")]
+[assembly: AssemblyDescription("MechanaX Video conversion service")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("clickclickBOOM Consulting")]
-[assembly: AssemblyProduct("MachinaX.LoeriesAdminWS")]
-[assembly: AssemblyCopyright("Copyright © clickclickBOOM  2013")]
+[assembly: AssemblyCompany("XXBoom")]
+[assembly: AssemblyProduct("MechanaXVideo")]
+[assembly: AssemblyCopyright("Copyright © Alan Benington 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.0.2.0")]
-[assembly: AssemblyFileVersion("4.0.2.0")]
+[assembly: AssemblyVersion("4.0.3.0")]
+[assembly: AssemblyFileVersion("4.0.3.0")]
