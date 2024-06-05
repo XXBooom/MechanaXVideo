@@ -1,6 +1,7 @@
 ﻿using NReco.VideoConverter;
 using System;
 using System.IO;
+using System.Runtime;
 using System.Xml;
 using XXBoom.MachinaX;
 
@@ -83,11 +84,24 @@ namespace MechanaX.Video.Service {
 			_FFMpeg.ConvertMedia(sourcePath, outputPath, format);
 		}
 
-		private void convert(string sourcePath, string format) {
+		private void convertdefault(string sourcePath, string format) {
 			FileInfo source = new FileInfo(sourcePath);
 			OutputPath = string.Format("{0}\\{1}.{2}", OutputFolder, Path.GetFileNameWithoutExtension(source.Name), format);
 
 			_FFMpeg.ConvertMedia(sourcePath, OutputPath, format);
+		}
+
+		private void convert(string sourcePath, string outputFormat) {
+			FileInfo source = new FileInfo(sourcePath);
+			OutputPath = string.Format("{0}\\{1}.{2}", OutputFolder, Path.GetFileNameWithoutExtension(source.Name), outputFormat);
+
+			ConvertSettings settings = new ConvertSettings();
+			settings.VideoCodec = "libx264";
+			settings.AudioCodec = "aac";
+			settings.CustomOutputArgs = "-strict experimental";
+
+			string sourceFormat = Path.GetExtension(sourcePath).Replace(".", "");
+			_FFMpeg.ConvertMedia(sourcePath, sourceFormat, OutputPath, outputFormat, settings);
 		}
 	}
 }
