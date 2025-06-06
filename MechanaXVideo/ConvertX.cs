@@ -1,7 +1,6 @@
 ﻿using NReco.VideoConverter;
 using System;
 using System.IO;
-using System.Runtime;
 using System.Xml;
 using XXBoom.MachinaX;
 
@@ -11,7 +10,7 @@ namespace MechanaX.Video.Service {
 	/// <summary>
 	/// ConvertX extends ServiceX to implement the xxxx management functionality
 	/// </summary>
-	public class ConvertX : x_result {
+	public partial class ConvertX : x_result {
 
 		private const string CONFIG_ID = "default";
 		private const string CONFIG_ROOT = "ConvertX";

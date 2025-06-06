@@ -11,7 +11,7 @@ namespace MechanaX.Video.Service {
 				Namespace = "http://www.clickclickBOOM.com/MachinaX/ServiceX",  // NB: Needs to be constant accross implementations - called from cmsX.dll
 																				//Namespace = "urn:Tabula.Service",	// Can be implementation based in not moved into cmsX.dll
 				Description = "MachinaX Video Convert Web Service")]
-	public class Convert : ConvertX {
+	public partial class Convert : ConvertX {
 
 		private const string CONFIG_ID = "mov2mp4";
 
